@@ -8,20 +8,9 @@ module.exports = function(grunt) {
 			}	
 		},
 		watch : {
-			sass : {
-				files : '../css/*.scss',
-				tasks : ['sass']
-			},
 			jekyll : {
-				files : ['../**/*.html', '../css/*.scss'],
+				files : ['../**/*.html', '_sass/*.scss'],
 				tasks : ['jekyll']
-			}
-		},
-		sass : {
-			dist : {
-				files : {
-					'css/test.css' : '_sass/test.scss'
-				}
 			}
 		},
 		browserSync : {
@@ -42,6 +31,6 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-	grunt.registerTask('build', ['sass', 'jekyll']);	
+	grunt.registerTask('build', ['jekyll']);	
 	grunt.registerTask('default', ['build', 'browserSync','watch']);		
 }
