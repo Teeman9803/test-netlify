@@ -9,13 +9,13 @@ module.exports = function(grunt) {
 		},
 		watch : {
 			jekyll : {
-				files : ['../**/*.html', '_sass/*.scss'],
+				files : ['_includes/*.html', '_sass/*.scss'],
 				tasks : ['jekyll']
 			}
 		},
 		browserSync : {
 			bsFiles : {
-				src : ['_site/css/*.css'],
+				src : ['_site/css/*.css', '_includes/*.html'],
 			},
 			options : {
 				watchTask : true,
